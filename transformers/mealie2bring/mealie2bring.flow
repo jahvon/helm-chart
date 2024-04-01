@@ -1,0 +1,27 @@
+
+visibility: public
+tags: [transformer]
+executables:
+  - verb: run
+    name: mealie2bring
+    aliases: [cooking, productivity]
+    description: Copy ingredients from Mealie meal plan to Bring!
+    type:
+      exec:
+        params:
+          - secretRef: mealie-token
+            envKey: MEALIE_TOKEN
+        cmd: go run . new --content "$TASK_CONTENT"
+
+  - verb: run
+    visibility: internal
+    name: mealie2bring
+    type:
+      request:
+        params:
+          - secretRef: mealie-token
+            envKey: MEALIE_TOKEN
+          - text: https://mealie.malik.haus
+            envKey: MEALIE_URL
+        method: POST
+        url: https://api.bring.com/mealie2bring
