@@ -1,0 +1,14 @@
+namespace: system
+visibility: public
+tags: [preferences]
+executables:
+  - verb: setup
+    name: all
+    tags: [tool, deps, dotfiles]
+    description: |
+      Setup all the things! This will install all system dependencies, tools, and dotfiles.
+    type:
+      exec:
+        cmd: |
+          ./setup.sh
+          ./install-tools.sh

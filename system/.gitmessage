@@ -1,0 +1,24 @@
+# <task id>: (<type>) <50 character subject line>
+# |<----  Using a Maximum Of 50 Characters  ---->|
+
+# <body: describe what changed, why, and any side effects>
+# |<----       Limit Each Line to a Maximum Of 72 Characters      ---->|
+
+# <co-authors (if any)>
+# Co-authored-by: Full Name <email@example.com>
+# Co-authored-by: Full Name <email@example.com>
+
+# --- COMMIT END ---
+# Task ID should be the JIRA task number or GitHub issue number (if any)
+#
+# Type can be
+#   feat     (new feature)
+#   fix      (bug fix)
+#   refactor (refactoring production code)
+#   style    (formatting, missing semi colons, etc; no code change)
+#   docs     (changes to documentation)
+#   test     (adding or refactoring tests; no production code change)
+#   chore    (updating grunt tasks etc; no production code change)
+#   wip      (work in progress commit -- these should be squashed before PR)
+#
+# Subject line should be capitalized and do not end with a period
