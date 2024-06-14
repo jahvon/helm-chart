@@ -1,0 +1,5 @@
+visibility: public
+tags: [storage]
+fromFiles:
+  - //storage/mount-drive.sh
+  - //storage/unmount-drive.sh

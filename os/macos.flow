@@ -1,0 +1,10 @@
+visibility: public
+namespace: macos
+tags: [macos]
+executables:
+  - verb: setup
+    name: dev
+    exec:
+      cmd: |
+        echo "Enabling developer mode"
+        sudo /usr/sbin/DevToolsSecurity -enable

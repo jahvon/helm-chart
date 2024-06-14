@@ -1,0 +1,13 @@
+workspaces:
+    system: /Users/jahvon/workspaces/github.com/jahvon/system
+    flow: /Users/jahvon/workspaces/github.com/jahvon/flow
+    tools: /Users/jahvon/workspaces/tools
+    sandbox: /Users/jahvon/workspaces/sandbox
+currentWorkspace: system
+workspaceMode: dynamic
+currentNamespace: ""
+interactive:
+    enabled: false
+    notify: false
+    sound: false
+defaultLogMode: logfmt

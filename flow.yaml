@@ -1,3 +1,4 @@
-displayName: core
-git:
-    enabled: false
+displayName: System Toolbox
+description: |
+    This workspace contains a collection of scripts, configuration files, and
+    executables that are use to manage system configurations, data, and CLI tools.
