@@ -9,7 +9,15 @@ executables:
       params:
         - envKey: CHEZMOI_REPO
           text: git@github.com:jahvon/system.git
-      cmd: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $CHEZMOI_REPO
+        - envKey: GITHUB_EMAIL
+          secretRef: github-email
+      cmd: |
+        echo "Copying chezmoi.toml to $HOME/.config/chezmoi/chezmoi.toml"
+        mkdir -p $HOME/.config/chezmoi
+        envsubst < chezmoi.toml > $HOME/.config/chezmoi/chezmoi.toml
+        echo "Running chezmoi init"
+        export BINDIR=/usr/local/bin
+        sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $CHEZMOI_REPO
 
   - verb: apply
     name: dotfiles

@@ -1,5 +1,3 @@
-{{ $email := promptString "email" -}}
-
 sourceDir = "$HOME/workspaces/github.com/jahvon/system"
 
 [git]
@@ -11,5 +9,5 @@ sourceDir = "$HOME/workspaces/github.com/jahvon/system"
 
 [data]
   name = "Jahvon Dockery"
-  email = {{ $email | quote }}
+  email = "$GITHUB_EMAIL"
   github = "jahvon"
