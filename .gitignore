@@ -1,7 +1,7 @@
 .idea
 .vscode
 
-bin/*
+setup/bin/*
 Brewfile.lock.json
 
 *.work
