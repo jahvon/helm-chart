@@ -1,4 +1,4 @@
 visibility: public
 tags: [cli]
-fromFiles:
-  - //cli/install-autocompletions.sh
+fromFile:
+  - install-autocompletions.sh

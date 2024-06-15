@@ -1,9 +1,9 @@
 visibility: public
 namespace: chezmoi
 tags: [dotfiles]
-fromFiles:
-  - //setup/chezmoi/.chezmoidata/install-brew.sh
-  - //setup/chezmoi/.chezmoidata/install-go.sh
+fromFile:
+  - chezmoi/.chezmoiscripts/run_install-brew.sh
+  - chezmoi/.chezmoiscripts/run_install-go.sh
 executables:
   - verb: install
     name: cli

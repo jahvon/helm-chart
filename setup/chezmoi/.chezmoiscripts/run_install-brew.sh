@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# f:verb=install f:named=brew
+# f:verb=install f:name=brew
 # f:alias=homebrew
 # f:desc=Run brew bundle to install packages from Brewfile and update Homebrew
 
@@ -13,9 +13,10 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo "Installing Homebrew packages..."
 dir=$(dirname $0)
-brew bundle --file="$dir/Brewfile"
+brewfile="$dir/../Brewfile"
+echo "Installing Homebrew packages ($brewfile)..."
+brew bundle --file="$brewfile"
 echo "Updating Homebrew..."
 brew update && brew upgrade
 brew cleanup -s

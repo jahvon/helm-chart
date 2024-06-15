@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# f:verb=install f:named=autocompletions
+# f:verb=install f:name=autocompletions
 # f:alias=completions
 # f:desc=Install autocompletions for shell tools
 

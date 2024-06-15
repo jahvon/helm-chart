@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# f:verb=install f:named=fonts
+# f:verb=install f:name=fonts
 # f:desc=Install Karla and MonoLisa fonts
 
 
