@@ -1,0 +1,15 @@
+{{ $email := promptString "email" -}}
+
+sourceDir = "$HOME/workspaces/github.com/jahvon/system"
+
+[git]
+  autoPush = true
+
+[secret]
+  command = "flow"
+  args = "--plaintext"
+
+[data]
+  name = "Jahvon Dockery"
+  email = {{ $email | quote }}
+  github = "jahvon"
