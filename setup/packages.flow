@@ -1,8 +1,8 @@
 visibility: public
 tags: [packages]
 fromFile:
-  - chezmoi/.chezmoiscripts/run_install-brew.sh
-  - chezmoi/.chezmoiscripts/run_install-go.sh
+  - chezmoi/.chezmoiscripts/run_onchange_install-brew.sh
+  - chezmoi/.chezmoiscripts/run_onchange_install-go.sh
   - //bootstrap.sh
 executables:
   - verb: install
