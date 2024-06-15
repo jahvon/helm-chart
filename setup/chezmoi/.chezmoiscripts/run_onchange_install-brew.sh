@@ -45,11 +45,10 @@ brew "git-secret"
 brew "protobuf"
 
 # Kubernetes
-tap "fluxcd/tap/flux"
-
 brew "kubectl"
 brew "kubectx"
 brew "helm"
+brew "fluxcd/tap/flux"
 
 brew "k9s"
 brew "kind"
