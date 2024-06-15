@@ -11,7 +11,7 @@ executables:
     exec:
       params:
         - envKey: CHEZMOI_REPO
-          text: system
+          text: git@github.com:jahvon/system.git
       cmd: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $CHEZMOI_REPO
 
   - verb: apply

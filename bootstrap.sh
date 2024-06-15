@@ -5,8 +5,6 @@
 # Bootstrap a new machine in preparation to run executables for setting up dotfiles and tools.
 # </f|description>
 
-source common.sh
-
 set -e
 
 # Setup flow
@@ -14,9 +12,9 @@ set -e
 if (command -v flow > /dev/null); then echo "Upgrading flow..."; else echo "Installing flow..."; fi
 curl -sSL https://raw.githubusercontent.com/jahvon/flow/main/scripts/install.sh | bash
 
-export INCLUDE_PROJECTS=false
-./flow/install-workspaces.sh
-./flow/sync-config.sh
+export INCLUDE_PROJECTS=${INCLUDE_PROJECTS:-"false"}
+./cli/flow/install-workspaces.sh
+./cli/flow/sync-config.sh
 flow sync -x
 
 # Install chezmoi and dotfiles

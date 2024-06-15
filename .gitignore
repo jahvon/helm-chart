@@ -1,2 +1,6 @@
+.idea
+.vscode
+
 Brewfile.lock.json
+
 *.work

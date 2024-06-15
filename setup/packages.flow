@@ -3,6 +3,7 @@ tags: [packages]
 fromFiles:
   - //setup/chezmoi/.chezmoidata/install-brew.sh
   - //setup/chezmoi/.chezmoidata/install-go.sh
+  - //bootstrap.sh
 executables:
   - verb: install
     name: xcode
