@@ -24,7 +24,7 @@ else
 fi
 
 if (command -v mockgen > /dev/null); then
-  mockgenversion=$(gomock --version)
+  mockgenversion=$(mockgen --version)
   echo "go mockgen is already installed ($mockgenversion)"
 else
   echo "Installing go mockgen..."
