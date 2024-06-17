@@ -3,39 +3,34 @@ tags: [ide]
 executables:
   - verb: run
     name: vscode-backup
-    type:
-      exec:
-        cmd: |  #!/bin/bash
-          set -e
-          #!/bin/bash
+    exec:
+      cmd: |  #!/bin/bash
+        set -e
 
-          VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
-          BACKUP_DIR="$FLOW_DEFINITION_DIR/config"
-          mkdir -p "$BACKUP_DIR"
-
-          echo "Backing up VS Code configuration..."
-          rsync -avh --delete "$VSCODE_CONFIG_DIR/" "$BACKUP_DIR/"
+        SETTINGS_FILE="$HOME/Library/Application Support/Code/User/settings.json"
+        BACKUP_FILE="$FLOW_DEFINITION_DIR/settings-backup.json"
+        echo "Backing up VS Code configuration to $BACKUP_FILE..."
+        cp "$SETTINGS_FILE" "$BACKUP_FILE"
 
   - verb: run
-    name: vscode-restore
-    type:
-      exec:
-        cmd: |  #!/bin/bash
-          set -e
-          VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
-          BACKUP_DIR="$FLOW_DEFINITION_DIR/config"
+    name: vscode-sync
+    exec:
+      cmd: |  #!/bin/bash
+        set -e
+        SETTINGS_FILE="$HOME/Library/Application Support/Code/User/settings.json"
+        BACKUP_FILE="$FLOW_DEFINITION_DIR/settings.json"
 
-          echo "Restoring VS Code configuration..."
-          rsync -avh --delete "$BACKUP_DIR/" "$VSCODE_CONFIG_DIR/"
+        echo "Syncing VS Code configuration via merge..."
+        tmpfile=$(mktemp)
+        jq -s '.[0] * .[1]' "$SETTINGS_FILE" "$BACKUP_FILE" > "$tmpfile" && mv "$tmpfile" "$SETTINGS_FILE"
 
   - verb: open
     visibility: public
     name: vscode
-    type:
-      launch:
-        args:
-          - pos: 1
-            envKey: URI
-            default: "."
-        uri: $URI
-        app: "Visual Studio Code"
+    launch:
+      args:
+        - pos: 1
+          envKey: URI
+          default: "."
+      uri: $URI
+      app: "Visual Studio Code"

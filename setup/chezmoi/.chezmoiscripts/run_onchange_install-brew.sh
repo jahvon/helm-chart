@@ -35,8 +35,8 @@ brew "node"
 brew "yarn"
 
 # IDEs
-brew "visual-studio-code"
-brew "goland"
+cask "visual-studio-code"
+cask "goland"
 cask "jetbrains-gateway"
 
 # Tools
