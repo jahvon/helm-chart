@@ -20,6 +20,7 @@ flow sync -x
 # Install chezmoi and dotfiles
 
 flow install chezmoi:cli -x
+flow install completions -x
 
 # Install zsh
 

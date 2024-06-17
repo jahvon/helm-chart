@@ -1,0 +1,7 @@
+visibility: private
+namespace: cleanup
+executables:
+  - verb: run
+    name: downloads
+    exec:
+      file: downloads.sh

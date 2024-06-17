@@ -1,0 +1,39 @@
+visibility: public
+namespace: jetbrains
+tags: [ide]
+executables:
+  - verb: run
+    name: goland-backup
+    type:
+      exec:
+        cmd: |  #!/bin/bash
+          set -e
+          GOLAND_CONFIG_DIR="$HOME/Library/Application Support/JetBrains/GoLand2024.1"
+          BACKUP_DIR="$FLOW_DEFINITION_DIR/goland-config"
+          mkdir -p "$BACKUP_DIR"
+
+          echo "Backing up Goland configuration..."
+          rsync -avh --delete "$GOLAND_CONFIG_DIR/" "$BACKUP_DIR/"
+
+  - verb: run
+    name: goland-restore
+    type:
+      exec:
+        cmd: |  #!/bin/bash
+          set -e
+          GOLAND_CONFIG_DIR="$HOME/Library/Application Support/JetBrains/GoLand2024.1"
+          BACKUP_DIR="$FLOW_DEFINITION_DIR/goland-config"
+
+          echo "Restoring Goland configuration..."
+          rsync -avh --delete "$BACKUP_DIR/" "$GOLAND_CONFIG_DIR/"
+
+  - verb: open
+    name: goland
+    type:
+      launch:
+        args:
+          - pos: 1
+            envKey: URI
+            default: "."
+        uri: $URI
+        app: GoLand

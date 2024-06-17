@@ -1,0 +1,41 @@
+visibility: private
+tags: [ide]
+executables:
+  - verb: run
+    name: vscode-backup
+    type:
+      exec:
+        cmd: |  #!/bin/bash
+          set -e
+          #!/bin/bash
+
+          VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
+          BACKUP_DIR="$FLOW_DEFINITION_DIR/config"
+          mkdir -p "$BACKUP_DIR"
+
+          echo "Backing up VS Code configuration..."
+          rsync -avh --delete "$VSCODE_CONFIG_DIR/" "$BACKUP_DIR/"
+
+  - verb: run
+    name: vscode-restore
+    type:
+      exec:
+        cmd: |  #!/bin/bash
+          set -e
+          VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
+          BACKUP_DIR="$FLOW_DEFINITION_DIR/config"
+
+          echo "Restoring VS Code configuration..."
+          rsync -avh --delete "$BACKUP_DIR/" "$VSCODE_CONFIG_DIR/"
+
+  - verb: open
+    visibility: public
+    name: vscode
+    type:
+      launch:
+        args:
+          - pos: 1
+            envKey: URI
+            default: "."
+        uri: $URI
+        app: "Visual Studio Code"

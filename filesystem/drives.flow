@@ -1,5 +1,5 @@
 visibility: public
-tags: [storage]
+tags: [devices, storage]
 fromFile:
   - mount-drive.sh
   - unmount-drive.sh

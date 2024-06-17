@@ -34,6 +34,11 @@ brew "python@3.11"
 brew "node"
 brew "yarn"
 
+# IDEs
+brew "visual-studio-code"
+brew "goland"
+cask "jetbrains-gateway"
+
 # Tools
 brew "podman"
 brew "hugo"

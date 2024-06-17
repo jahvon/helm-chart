@@ -3,13 +3,10 @@
 # f:verb=install f:name=fonts
 # f:desc=Install Karla and MonoLisa fonts
 
-
-source common.sh
-
 set -e
 
 echo "Installing fonts..."
-tffFiles=$(find fonts -type f -name "*.ttf")
+tffFiles=$(find "$FLOW_DEFINITION_DIR/fonts" -type f -name "*.ttf")
 if [[ $OS == "darwin" ]]; then
   for file in $tffFiles; do
     cp "$file" ~/Library/Fonts
