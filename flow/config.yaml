@@ -1,12 +1,12 @@
 workspaces:
-    system: /Users/jahvon/workspaces/github.com/jahvon/system
-    flow: /Users/jahvon/workspaces/github.com/jahvon/flow
-    tuikit: /Users/jahvon/workspaces/github.com/jahvon/tuikit
-    kube: /Users/jahvon/workspaces/github.com/jahvon/kube
-    hubext: /Users/jahvon/workspaces/github.com/jahvon/hubext
-    echo: /Users/jahvon/workspaces/github.com/jahvon/echo-server
-    tools: /Users/jahvon/workspaces/tools
-    sandbox: /Users/jahvon/workspaces/sandbox
+    system: $HOME/workspaces/github.com/jahvon/system
+    flow: $HOME/workspaces/github.com/jahvon/flow
+    tuikit: $HOME/workspaces/github.com/jahvon/tuikit
+    kube: $HOME/workspaces/github.com/jahvon/kube
+    hubext: $HOME/workspaces/github.com/jahvon/hubext
+    echo: $HOME/workspaces/github.com/jahvon/echo-server
+    tools: $HOME/workspaces/tools
+    sandbox: $HOME/workspaces/sandbox
 currentWorkspace: system
 workspaceMode: dynamic
 currentNamespace: ""

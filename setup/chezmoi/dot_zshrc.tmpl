@@ -81,6 +81,9 @@ alias f="flow"
 alias lib="flow library"
 alias devflow="$GH_ROOT/jahvon/flow/.bin/flow"
 
+### Include local binary path
+export PATH="$PATH:$HOME/.local/bin"
+
 ### Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 

@@ -1,8 +1,8 @@
 workspaces:
-    system: /Users/jahvon/workspaces/github.com/jahvon/system
-    flow: /Users/jahvon/workspaces/github.com/jahvon/flow
-    tools: /Users/jahvon/workspaces/tools
-    sandbox: /Users/jahvon/workspaces/sandbox
+    system: $HOME/workspaces/github.com/jahvon/system
+    flow: $HOME/workspaces/github.com/jahvon/flow
+    tools: $HOME/workspaces/tools
+    sandbox: $HOME/workspaces/sandbox
 currentWorkspace: system
 workspaceMode: dynamic
 currentNamespace: ""

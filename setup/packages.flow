@@ -3,7 +3,8 @@ tags: [packages]
 fromFile:
   - chezmoi/.chezmoiscripts/run_onchange_install-brew.sh
   - chezmoi/.chezmoiscripts/run_onchange_install-go.sh
-  - //bootstrap.sh
+# FIXME: execution of generated scripts outside of the definition path
+#  - //bootstrap.sh
 executables:
   - verb: install
     name: xcode

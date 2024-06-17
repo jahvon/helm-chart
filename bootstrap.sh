@@ -7,14 +7,19 @@
 
 set -e
 
+# Create local bin dir
+export BINDIR=${BINDIR:-"$HOME/.local/bin"}
+mkdir -p $BINDIR
+
 # Setup flow
 
+# TODO: install flow and other binaries into local bin
 if (command -v flow > /dev/null); then echo "Upgrading flow..."; else echo "Installing flow..."; fi
 curl -sSL https://raw.githubusercontent.com/jahvon/flow/main/scripts/install.sh | bash
 
 export INCLUDE_PROJECTS=${INCLUDE_PROJECTS:-"false"}
-./cli/flow/install-workspaces.sh
-./cli/flow/sync-config.sh
+./flow/install-workspaces.sh
+./flow/sync-config.sh
 flow sync -x
 
 # Install chezmoi and dotfiles

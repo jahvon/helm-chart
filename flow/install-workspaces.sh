@@ -20,7 +20,7 @@ for repo in "${collections[@]}"; do
 done
 
 
-if [ $INCLUDE_PROJECTS ]; then
+if [ $INCLUDE_PROJECTS = "true" ]; then
   projects=(
     "jahvon/flow"
     "jahvon/tuikit"
@@ -41,12 +41,12 @@ if [ -d "$HOME/workspaces/github.com/jahvon/tools" ]; then
   echo "tools directory already exist"
 else
   mkdir -p "$HOME/workspaces/github.com/jahvon/tools"
-  echo "displayName: tools" > "$HOME/workspace/github.com/jahvon/tools/workspace.yaml"
+  echo "displayName: tools" > "$HOME/workspaces/github.com/jahvon/tools/workspace.yaml"
 fi
 
 if [ -d "$HOME/workspaces/github.com/jahvon/sandbox" ]; then
   echo "sandbox directory already exist"
 else
   mkdir -p "$HOME/workspaces/github.com/jahvon/sandbox"
-  echo "displayName: sandbox" > "$HOME/workspace/github.com/jahvon/tools/workspace.yaml"
+  echo "displayName: sandbox" > "$HOME/workspaces/github.com/jahvon/tools/workspace.yaml"
 fi
