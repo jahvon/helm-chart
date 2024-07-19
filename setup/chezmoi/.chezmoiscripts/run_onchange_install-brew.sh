@@ -26,6 +26,7 @@ brew "telnet"
 brew "jq"
 brew "yq"
 brew "gawk"
+brew "tmux"
 
 # Programming Languages
 brew "openjdk@17"
@@ -40,6 +41,7 @@ cask "goland"
 cask "jetbrains-gateway"
 
 # Tools
+brew "gh"
 brew "podman"
 brew "hugo"
 brew "neovim"

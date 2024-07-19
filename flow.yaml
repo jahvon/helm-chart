@@ -1,4 +1,3 @@
-displayName: System Toolbox
-description: |
-    This workspace contains a collection of scripts, configuration files, and
-    executables that are use to manage system configurations, data, and CLI tools.
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jahvon/flow/HEAD/schemas/workspace_schema.json
+displayName: system
+descriptionFile: README.md
