@@ -6,10 +6,9 @@ executables:
     name: lab
     description: |
       Labs are experimental go programs built to test out Kubernetes client libraries.
-    type:
-      exec:
-        args:
-          - pos: 1
-            envKey: LAB_REF
-            required: true
-        cmd: go run . --lab $LAB_REF
+    exec:
+      args:
+        - pos: 1
+          envKey: LAB_REF
+          required: true
+      cmd: go run . --lab $LAB_REF

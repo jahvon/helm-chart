@@ -5,26 +5,24 @@ executables:
     name: todo
     aliases: [task, action]
     description: Add a new task to Todoist
-    type:
-      exec:
-        params:
-          - secretRef: todoist-api-token
-            envKey: TODOIST_API_TOKEN
-          - prompt: |
-              What task would you like to add?
-              You may use the following, optional context syntax: 
-                - @project (e.g. @work, @home)
-                - [label1,label2] (e.g. [quickwin,learning])
-                - !priority (e.g. !high, !low)
-            envKey: TASK_CONTENT
-        cmd: go run . new --content "$TASK_CONTENT"
+    exec:
+      params:
+        - secretRef: todoist-api-token
+          envKey: TODOIST_API_TOKEN
+        - prompt: |
+            What task would you like to add?
+            You may use the following, optional context syntax:
+              - @project (e.g. @work, @home)
+              - [label1,label2] (e.g. [quickwin,learning])
+              - !priority (e.g. !high, !low)
+          envKey: TASK_CONTENT
+      cmd: go run . new --content "$TASK_CONTENT"
   - verb: view
     name: thisweek
     aliases: [this-week]
     description: Show all tasks in focus for this week
-    type:
-      exec:
-        params:
-          - secretRef: todoist-api-token
-            envKey: TODOIST_API_TOKEN
-        cmd: go run . view --content "$TASK_CONTENT"
+    exec:
+      params:
+        - secretRef: todoist-api-token
+          envKey: TODOIST_API_TOKEN
+      cmd: go run . view --content "$TASK_CONTENT"

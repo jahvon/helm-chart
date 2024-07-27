@@ -8,26 +8,24 @@ executables:
     description: |
       Create a local Kubernetes cluster using kind.
       src: github.com/kubernetes-sigs/kind
-    type:
-      exec:
-        file: kind.sh
-        args:
-          - pos: 1
-            envKey: CLUSTER_NAME
-            default: local-cluster
-        params:
-          - text: create
-            envKey: ACTION
+    exec:
+      file: kind.sh
+      args:
+        - pos: 1
+          envKey: CLUSTER_NAME
+          default: local-cluster
+      params:
+        - text: create
+          envKey: ACTION
   - verb: destroy
     name: local-cluster
     aliases: [kind]
-    type:
-      exec:
-        file: kind.sh
-        args:
-          - pos: 1
-            envKey: CLUSTER_NAME
-            default: local-cluster
-        params:
-          - text: destroy
-            envKey: ACTION
+    exec:
+      file: kind.sh
+      args:
+        - pos: 1
+          envKey: CLUSTER_NAME
+          default: local-cluster
+      params:
+        - text: destroy
+          envKey: ACTION

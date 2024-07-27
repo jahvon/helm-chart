@@ -4,12 +4,10 @@ tags: [git]
 executables:
   - verb: new
     name: commit
-    type:
-      exec:
-        file: commit.sh
+    exec:
+      file: commit.sh
   - verb: new
     visibility: public
     name: branch
-    type:
-      exec:
-        file: init-branch.sh
+    exec:
+      file: init-branch.sh
