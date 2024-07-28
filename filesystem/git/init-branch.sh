@@ -31,12 +31,13 @@ if has_dirty_changes; then
   echo "There are dirty changes in your working directory."
   if confirm "Do you want to keep these changes?"; then
     read -r -p "Enter stash name: " stash_name
-    git stash push -m "$stash_name"
+    git stash push -m "$stash_name" .
   else
     git reset --hard
   fi
 fi
 
+default_branch=$(get_default_branch)
 echo "Pulling latest changes from $default_branch branch..."
 git checkout "$default_branch"
 git pull
